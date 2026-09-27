@@ -1,30 +1,30 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:get/get.dart';
 
-import 'package:masjid_sabilillah/main.dart';
+import 'package:masjid_sabilillah/data/models/prayer_time_model.dart';
+import 'package:masjid_sabilillah/presentation/screens/donasi_screen.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  test('PrayerTime menyusun lima waktu sholat secara berurutan', () {
+    final prayer = PrayerTime(
+      tanggal: '27-09-2026',
+      subuh: '04:05',
+      dzuhur: '11:25',
+      ashar: '14:35',
+      maghrib: '17:30',
+      isya: '18:40',
+    );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    final names = prayer.prayerList.map((e) => e['name']).toList();
+    expect(names, ['Subuh', 'Dzuhur', 'Ashar', 'Maghrib', 'Isya']);
+    expect(prayer.prayerList.first['time'], '04:05');
+    expect(prayer.prayerList.last['time'], '18:40');
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  testWidgets('Halaman Donasi tampil', (WidgetTester tester) async {
+    await tester.pumpWidget(const GetMaterialApp(home: DonasiScreen()));
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Donasi'), findsOneWidget);
+    expect(find.text('Fitur Donasi Segera Hadir'), findsOneWidget);
   });
 }

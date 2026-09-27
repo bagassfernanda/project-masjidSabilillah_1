@@ -30,7 +30,6 @@ class _AnnouncementListViewState extends State<AnnouncementListView> {
 
   bool _isRamadanContent(String title, String content) {
     final t = title.toLowerCase();
-    final c = content.toLowerCase();
     return t.contains('ramadhan') || t.contains('tarawih') || t.contains('buka') || 
            t.contains('sahur') || t.contains('zakat') || t.contains('fitrah');
   }

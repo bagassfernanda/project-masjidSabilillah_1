@@ -30,54 +30,43 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # UI & Animasi
   phosphor_flutter: ^2.0.0
   concentric_transition: ^1.0.3
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.8
-  firebase_core: ^4.2.1               # [cite: 269]
-  firebase_messaging: ^16.0.4         # [cite: 318]
-  flutter_local_notifications: ^17.2.3 # [cite: 374]
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-
-  internet_connection_checker: ^1.0.0+1
-
-
-  # Modul 2: Responsivitas & Animasi
   flutter_staggered_grid_view: ^0.7.0
-  
-  # Modul 3 & 5: API & Lokasi
+  cached_network_image: ^3.3.1
+
+  # API & Lokasi
   http: ^1.2.0
+  internet_connection_checker: ^1.0.0+1
   geolocator: ^13.0.1
   permission_handler: ^11.3.1
   flutter_map: ^7.0.2
   latlong2: ^0.9.1
+  url_launcher: ^6.2.5  # untuk buka Google Maps
 
-  # Modul 4: Penyimpanan Lokal
+  # Penyimpanan Lokal
   shared_preferences: ^2.2.2
-
-  # Modul 4 & 6: Firebase (Cloud + Notifikasi)
-  supabase_flutter: ^2.5.0
-  flutter_dotenv: ^5.1.1
-  supabase_flutter: ^2.5.0
-  flutter_dotenv: ^5.1.1
-
-  # Opsional: Routing modern (lebih rapi dari Navigator.push)
-  go_router: ^13.0.0
-  get: ^4.6.6
   path_provider: ^2.1.2
   intl: ^0.19.0
-  
-  # State Management
-  provider: ^6.1.0
 
-  url_launcher: ^6.2.5  # untuk buka Google Maps
-  cached_network_image: ^3.3.1
+  # Database & Autentikasi (Supabase)
+  supabase_flutter: ^2.5.0
+  flutter_dotenv: ^5.1.1
+
+  # Notifikasi (Firebase)
+  firebase_core: ^4.2.1
+  firebase_messaging: ^16.0.4
+  flutter_local_notifications: ^17.2.3
+
+  # State Management & Routing
+  get: ^4.6.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

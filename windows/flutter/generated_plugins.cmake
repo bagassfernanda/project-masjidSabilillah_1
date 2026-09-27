@@ -4,12 +4,9 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   app_links
-<<<<<<< HEAD
-=======
   firebase_core
   geolocator_windows
   permission_handler_windows
->>>>>>> fitur/notifikasi
   url_launcher_windows
 )
 
